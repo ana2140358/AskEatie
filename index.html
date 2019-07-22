@@ -1,0 +1,111 @@
+<!--
+Author: Anan Aziz
+Project: Ask Eatie Form HTML
+Date: 07/21/19
+-->
+
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <title>AskEatie</title>
+    <link rel="stylesheet" href="styles.css">    
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-firestore.js"></script>
+  </head>
+  
+  <body>
+    <div class="container">  
+      <form id="contact" action="" method="post">
+        <h3>What's in your fridge?</h3>
+        <br/>
+
+        <fieldset>
+          <label> <b>Name *</b><input placeholder="First Name" type="text" tabindex="1" required autofocus> </label>
+           <input placeholder="Last Name" type="text" tabindex="1" required autofocus>
+        </fieldset>
+
+        <fieldset>
+          <label> <b>Email *</b><input placeholder="This is where AskEatie will send you the recipes, not spam." type="email" tabindex="2" required></label>
+        </fieldset>
+
+        <fieldset>
+          <label> <b>How much time do you have? * </b><i>(Please pick one)</i></label><br>
+          <input type="radio" name="time1" value="Less than 15 min">Less than 15 min<br>
+          <input type="radio" name="time2" value="15-30 min">15-30 min<br>
+          <input type="radio" name="time3" value="30-60 min">30-60 min<br>
+          <input type="radio" name="time4" value="Over 1 h">Over 1 h<br>         
+        </fieldset>
+
+        <fieldset>
+          <label> <b>Dietary Preferences</b> <i>(Please check all that apply, if any)</i></label><br>
+          <input type="checkbox" name="dietary-preferene1" value="Gluten-Free">Gluten-Free<br>
+          <input type="checkbox" name="dietary-preferene2" value="Halal">Halal<br>
+          <input type="checkbox" name="dietary-preferene3" value="Keto">Keto<br>
+          <input type="checkbox" name="dietary-preferene4" value="Kosher">Kosher<br>
+          <input type="checkbox" name="dietary-preferene5" value="Low Carb">Low Carb<br>
+          <input type="checkbox" name="dietary-preferene6" value="Low Fat">Low Fat<br>
+          <input type="checkbox" name="dietary-preferene7" value="Low/No Sodium">Low/No Sodium<br>
+          <input type="checkbox" name="dietary-preferene8" value="Low Sugar">Low Sugar<br>
+          <input type="checkbox" name="dietary-preferene9" value="No Eggs">No Eggs<br>
+          <input type="checkbox" name="dietary-preferene10" value="No Nuts">No Nuts<br>
+          <input type="checkbox" name="dietary-preferene11" value="No Peanuts">No Peanuts<br>
+          <input type="checkbox" name="dietary-preferene12" value="No Shellfish">No Shellfish<br>
+          <input type="checkbox" name="dietary-preferene13" value="No Soy">No Soy<br>
+          <input type="checkbox" name="dietary-preferene14" value="Paleo">Paleo<br>
+          <input type="checkbox" name="dietary-preferene15" value="Pescatarian">Pescatarian<br>
+          <input type="checkbox" name="dietary-preferene16" value="Vegetarian">Vegetarian<br>
+          <input type="checkbox" name="dietary-preferene17" value="Vegan">Vegan<br>
+          <input type="checkbox" name="dietary-preferene18" value="Whole 30">Whole 30<br>
+        </fieldset>
+        
+	<fieldset>
+          <label> <b>Ingredient #1</b> <input placeholder="Anything sad in that crisper drawer?" type="url" tabindex="4" required></label>
+        </fieldset>
+
+        <fieldset>
+          <label> <b>Ingredient #2</b> <input placeholder="Perhaps some 'what should I do with you now' condiment?" type="url" tabindex="4" ></label>
+        </fieldset>
+
+        <fieldset>
+          <label> <b>Ingredient #3</b> <input placeholder="Hey, your favorite ingredients are fair play too!" type="url" tabindex="4" ></label>
+        </fieldset>
+
+        <fieldset>
+          <label> <b>Anyting else?</b></label>
+          <textarea tabindex="5" required></textarea>
+        </fieldset>
+
+        <fieldset>
+          <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+        </fieldset>
+
+        <!--<p class="copyright">Designed by <a href="https://ana2140358.io/cv/" target="_blank" title="Anan">Colorlib</a></p>-->
+      </form>
+    </div>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#config-web-app -->  
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCJcLj3adMdt0r2LGbbAjF2aLy6II2a_H4",
+        authDomain: "askeatie-e8419.firebaseapp.com",
+        databaseURL: "https://askeatie-e8419.firebaseio.com",
+        projectId: "askeatie-e8419",
+        storageBucket: "askeatie-e8419.appspot.com",
+        messagingSenderId: "716639194327",
+        appId: "1:716639194327:web:2a5388c6fb5f06c5"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+      db.settings({ timestampsInSnapshots: true })
+    </script>
+
+    <script src="app.js"></script>
+    
+  </body>
+</hmtl>
